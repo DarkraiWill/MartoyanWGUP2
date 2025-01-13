@@ -1,0 +1,67 @@
+﻿<Page x:Class="MartoyanWGUP2.Pages.AddPartnerPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MartoyanWGUP2.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddPartnerPage">
+
+    <Grid>
+        <!-- Определение строк и столбцов -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Наименование -->
+        <TextBlock Text="Наименование:" Style="{StaticResource AddPageTextBlock}" VerticalAlignment="Center"/>
+        <TextBox x:Name="PartnerName" ToolTip="Наименование партнёра" Text="{Binding PartnerName}" Grid.Column="1" Margin="5"/>
+
+        <!-- Тип -->
+        <TextBlock Text="Тип:" Grid.Row="1" Style="{StaticResource AddPageTextBlock}" VerticalAlignment="Center"/>
+        <ComboBox x:Name="PartnerType" Grid.Column="1" Grid.Row="1" Height="20" Width="120" 
+                  DisplayMemberPath="PartnerTypeName" 
+          SelectedValuePath="ID" 
+          SelectedValue="{Binding PartnerTypeID}" Margin="5"/>
+
+        <!-- Рейтинг -->
+        <TextBlock Text="Рейтинг:" Grid.Row="2" Style="{StaticResource AddPageTextBlock}" VerticalAlignment="Center"/>
+        <TextBox x:Name="PartnerRate" ToolTip="Рейтинг партнёра" Grid.Column="1" Grid.Row="2" Text="{Binding Rating}" PreviewTextInput="PartnerRate_PreviewTextInput" Margin="5"/>
+
+        <!-- Юр. адрес -->
+        <TextBlock Text="Юр. адрес:" Grid.Row="3" Style="{StaticResource AddPageTextBlock}" VerticalAlignment="Center"/>
+        <TextBox x:Name="PartnerAddress" ToolTip="Юридический адрес организации" Grid.Column="1" Grid.Row="3" Text="{Binding LegalAddress}" Margin="5"/>
+
+        <!-- ФИО директора -->
+        <TextBlock Text="ФИО директора:" Grid.Row="4" Style="{StaticResource AddPageTextBlock}" VerticalAlignment="Center"/>
+        <StackPanel Grid.Column="1" Grid.Row="4" Orientation="Horizontal" Margin="5">
+            <TextBox x:Name="DirectorSurname" ToolTip="Фамилия директора организации" Width="100" Text="{Binding DirectorFirstName}" Margin="0,0,5,0"/>
+            <TextBox x:Name="DirectorName" ToolTip="Имя директора организации" Width="100" Text="{Binding DirectorLastName}" Margin="0,0,5,0"/>
+            <TextBox x:Name="DirectorLastName" ToolTip="Отчество директора организации" Width="100" Text="{Binding DirectorPatronymic}"/>
+        </StackPanel>
+
+        <!-- Телефон -->
+        <TextBlock Text="Телефон:" Grid.Row="5" Style="{StaticResource AddPageTextBlock}" VerticalAlignment="Center"/>
+        <TextBox x:Name="PartnerPhone" ToolTip="Телефон организации" Grid.Column="1" Grid.Row="5" Text="{Binding TelephoneNumber}" PreviewTextInput="PartnerPhone_PreviewTextInput" Margin="5"/>
+
+        <!-- Email -->
+        <TextBlock Text="Email:" Grid.Row="6" Style="{StaticResource AddPageTextBlock}" VerticalAlignment="Center"/>
+        <TextBox x:Name="PartnerEmail" ToolTip="Адрес электронной почты" Grid.Column="1" Grid.Row="6" Text="{Binding Email}" Margin="5"/>
+
+        <!-- Кнопки -->
+        <Button x:Name="CancelButton" Content="Отмена" Grid.Row="7" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="5" Click="CancelButton_Click"/>
+        <Button x:Name="SaveButton" Content="Сохранить" Grid.Row="7" Grid.Column="1" HorizontalAlignment="Right" Margin="5" Click="SaveButton_Click"/>
+    </Grid>
+</Page>
