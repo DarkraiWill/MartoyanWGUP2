@@ -90,7 +90,7 @@
     <Compile Include="ProductType.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="sysdiagram.cs">
+    <Compile Include="Role.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Page Include="Dictionary1.xaml">
@@ -176,27 +176,25 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <Resource Include="d41296e46a7324f6cc171f27ca576572.ico" />
-  </ItemGroup>
   <ItemGroup>
     <Resource Include="MasterPol.ico" />
+    <Resource Include="Resources\MasterPol.ico" />
+    <Resource Include="Resources\MasterPol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
       <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Model1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
-    <Resource Include="Resources\MasterPol.ico" />
-    <Resource Include="Resources\MasterPol.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

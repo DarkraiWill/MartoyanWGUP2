@@ -15,13 +15,14 @@ namespace MartoyanWGUP2
     
     public partial class ProductionDBEntities : DbContext
     {
-        private static ProductionDBEntities _context;
-    
-        public static ProductionDBEntities GetContext() {
-            if(_context == null) {
-                _context = new ProductionDBEntities();
-            }
-            return _context;
+        private static ProductionDBEntities context;
+        public static ProductionDBEntities GetContext()
+        {
+                    if (context == null)
+                    {
+                        context = new ProductionDBEntities();
+                    }
+            return context;
         }
         public ProductionDBEntities()
             : base("name=ProductionDBEntities")
@@ -39,6 +40,6 @@ namespace MartoyanWGUP2
         public virtual DbSet<PartnersType> PartnersTypes { get; set; }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<ProductType> ProductTypes { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<Role> Roles { get; set; }
     }
 }

@@ -55,13 +55,14 @@ using System.Linq;
 
 <#=Accessibility.ForType(container)#> partial class <#=code.Escape(container)#> : DbContext
 {
-    private static <#=code.Escape(container)#> _context;
-
-    public static <#=code.Escape(container)#> GetContext() {
-        if(_context == null) {
-            _context = new <#=code.Escape(container)#>();
-        }
-        return _context;
+    private static <#=code.Escape(container)#> context;
+    public static <#=code.Escape(container)#> GetContext()
+    {
+                if (context == null)
+                {
+                    context = new <#=code.Escape(container)#>();
+                }
+        return context;
     }
     public <#=code.Escape(container)#>()
         : base("name=<#=container.Name#>")
